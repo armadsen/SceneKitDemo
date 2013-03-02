@@ -43,7 +43,7 @@
 
 - (void)receivedNewData:(NSData *)data forCharacteristic:(CBCharacteristic *)characteristic
 {
-	//NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, data, characteristic);
+//	NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, data, characteristic);
 	
 	if ([data length] < 2) return;
 	

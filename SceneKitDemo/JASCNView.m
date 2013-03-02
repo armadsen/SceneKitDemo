@@ -9,6 +9,13 @@
 #import "JASCNView.h"
 #import "ORSBluetoothAccelerometerBoard.h"
 
+@interface JASCNView ()
+
+@property (nonatomic, strong) SCNNode *torusNode;
+@property (nonatomic, strong) SCNNode *beeNode;
+
+@end
+
 @implementation JASCNView
 
 -(void)awakeFromNib {
@@ -43,10 +50,10 @@
     
     self.allowsCameraControl = YES;
     
-    //[self loadTorus];
+    [self loadTorus];
     //[self loadBeeFromSceneFile];
     
-    [self loadMaleScene];
+//    [self loadMaleScene];
 
 }
 
@@ -64,6 +71,7 @@
     [self.scene.rootNode addChildNode:bee];
     
     self.playing = YES;
+	self.beeNode = bee;
 }
 
 -(void)loadMaleScene {
@@ -113,7 +121,9 @@
     animation.duration = 9.f;
     animation.repeatCount = HUGE_VALF;
     
-    [torusNode addAnimation:animation forKey:@"transform"];
+    //[torusNode addAnimation:animation forKey:@"transform"];
+	
+	self.torusNode = torusNode;
 }
 
 -(SCNScene *)loadSceneFromFile:(NSString *)filename {
@@ -153,6 +163,24 @@
     }
     
     [super mouseDown:event];
+}
+
+#pragma mark - Properties
+
+- (void)setOrientation:(ORSBluetoothAccelerometerOrientation *)orientation
+{
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, orientation);
+	float x = orientation.x / 9.8f;
+	float y = orientation.y / 9.8f;
+	float z = orientation.z / 9.8f;
+	if (x == 0.0f || y == 0.0f || z == 0.0f) return;
+	
+	float roll = -atan2f(y, z);
+	float pitch = atan2f(x, sqrtf(y*y + z*z));
+	
+	CATransform3D transform = CATransform3DMakeRotation(roll, 0.0, 0.0, 1.0);
+	transform = CATransform3DRotate(transform, pitch, 1.0, 0.0, 0.0);
+	self.torusNode.transform = transform;
 }
 
 @end

@@ -50,6 +50,7 @@
 	
 	if (object == self.accelerometer && [keyPath isEqualToString:@"orientation"])
 	{
+		NSLog(@"orientation: %@", self.accelerometer.orientation);
 		self.sceneView.orientation = self.accelerometer.orientation;
 	}
 }
