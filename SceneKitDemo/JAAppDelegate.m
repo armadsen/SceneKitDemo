@@ -9,6 +9,7 @@
 #import "JAAppDelegate.h"
 #import "ORSBluetoothLEScanner.h"
 #import "ORSBluetoothAccelerometerBoard.h"
+#import "JASCNView.h"
 
 @interface JAAppDelegate ()
 
@@ -49,7 +50,7 @@
 	
 	if (object == self.accelerometer && [keyPath isEqualToString:@"orientation"])
 	{
-		NSLog(@"orientation: %@", self.accelerometer.orientation);
+		self.sceneView.orientation = self.accelerometer.orientation;
 	}
 }
 
@@ -65,10 +66,7 @@
 @synthesize scanner = _scanner;
 - (ORSBluetoothLEScanner *)scanner
 {
-	if (!_scanner)
-	{
-		self.scanner = [ORSBluetoothLEScanner sharedBluetoothLEScanner];
-	}
+	if (!_scanner) self.scanner = [ORSBluetoothLEScanner sharedBluetoothLEScanner];
 	return _scanner;
 }
 

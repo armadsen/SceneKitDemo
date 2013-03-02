@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "ORSBluetoothAccelerometerBoard.h"
 
+@class JASCNView;
 @class ORSBluetoothLEScanner;
 
 @interface JAAppDelegate : NSObject <NSApplicationDelegate, ORSBluetoothBoardDelegate>
@@ -19,6 +20,7 @@
 @property (nonatomic, strong) ORSBluetoothAccelerometerBoard *accelerometer;
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet JASCNView *sceneView;
 @property (assign) IBOutlet NSTextField *scanningInfoLabel;
 
 @end
