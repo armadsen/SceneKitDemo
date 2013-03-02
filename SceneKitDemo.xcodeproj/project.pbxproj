@@ -16,6 +16,11 @@
 		F2A8F0E116E298CF00E73EA1 /* JASCNView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A8F0E016E298CF00E73EA1 /* JASCNView.m */; };
 		F2A8F0E316E2999A00E73EA1 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2A8F0E216E2999A00E73EA1 /* SceneKit.framework */; };
 		F2A8F0E516E2999F00E73EA1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2A8F0E416E2999F00E73EA1 /* QuartzCore.framework */; };
+		F2A8F0E716E2A93D00E73EA1 /* slccocoaheads.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A8F0E616E2A93D00E73EA1 /* slccocoaheads.png */; };
+		F2A8F0E916E2A9F700E73EA1 /* slccocoaheadswhite.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A8F0E816E2A9F700E73EA1 /* slccocoaheadswhite.png */; };
+		F2A8F0EB16E2AF8B00E73EA1 /* Bee2.dae in Resources */ = {isa = PBXBuildFile; fileRef = F2A8F0EA16E2AF8B00E73EA1 /* Bee2.dae */; };
+		F2A8F0F016E2B76600E73EA1 /* male_large_01.png in Resources */ = {isa = PBXBuildFile; fileRef = F2A8F0EE16E2B76600E73EA1 /* male_large_01.png */; };
+		F2A8F0F116E2B76600E73EA1 /* male_large.dae in Resources */ = {isa = PBXBuildFile; fileRef = F2A8F0EF16E2B76600E73EA1 /* male_large.dae */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		F2A8F0E016E298CF00E73EA1 /* JASCNView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASCNView.m; sourceTree = "<group>"; };
 		F2A8F0E216E2999A00E73EA1 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		F2A8F0E416E2999F00E73EA1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F2A8F0E616E2A93D00E73EA1 /* slccocoaheads.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slccocoaheads.png; sourceTree = "<group>"; };
+		F2A8F0E816E2A9F700E73EA1 /* slccocoaheadswhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slccocoaheadswhite.png; sourceTree = "<group>"; };
+		F2A8F0EA16E2AF8B00E73EA1 /* Bee2.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Bee2.dae; sourceTree = "<group>"; };
+		F2A8F0EE16E2B76600E73EA1 /* male_large_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male_large_01.png; sourceTree = "<group>"; };
+		F2A8F0EF16E2B76600E73EA1 /* male_large.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = male_large.dae; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +116,11 @@
 		F2A8F0C916E2985100E73EA1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F2A8F0EE16E2B76600E73EA1 /* male_large_01.png */,
+				F2A8F0EF16E2B76600E73EA1 /* male_large.dae */,
+				F2A8F0EA16E2AF8B00E73EA1 /* Bee2.dae */,
+				F2A8F0E816E2A9F700E73EA1 /* slccocoaheadswhite.png */,
+				F2A8F0E616E2A93D00E73EA1 /* slccocoaheads.png */,
 				F2A8F0CA16E2985100E73EA1 /* SceneKitDemo-Info.plist */,
 				F2A8F0CB16E2985100E73EA1 /* InfoPlist.strings */,
 				F2A8F0CE16E2985100E73EA1 /* main.m */,
@@ -170,6 +185,11 @@
 				F2A8F0CD16E2985100E73EA1 /* InfoPlist.strings in Resources */,
 				F2A8F0D316E2985100E73EA1 /* Credits.rtf in Resources */,
 				F2A8F0D916E2985100E73EA1 /* MainMenu.xib in Resources */,
+				F2A8F0E716E2A93D00E73EA1 /* slccocoaheads.png in Resources */,
+				F2A8F0E916E2A9F700E73EA1 /* slccocoaheadswhite.png in Resources */,
+				F2A8F0EB16E2AF8B00E73EA1 /* Bee2.dae in Resources */,
+				F2A8F0F016E2B76600E73EA1 /* male_large_01.png in Resources */,
+				F2A8F0F116E2B76600E73EA1 /* male_large.dae in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +338,7 @@
 				F2A8F0DE16E2985100E73EA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
