@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D906F8316E2A7F500E72884 /* ORSBluetoothLEScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D906F8116E2A7F500E72884 /* ORSBluetoothLEScanner.m */; };
+		9D906F8616E2A89200E72884 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D906F8516E2A89200E72884 /* IOBluetooth.framework */; };
+		9D906F8E16E2AF6800E72884 /* ORSBluetoothBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D906F8B16E2AF6800E72884 /* ORSBluetoothBoard.m */; };
+		9D906F8F16E2AF6800E72884 /* ORSBluetoothAccelerometerBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D906F8D16E2AF6800E72884 /* ORSBluetoothAccelerometerBoard.m */; };
 		F2A8F0C316E2985100E73EA1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2A8F0C216E2985100E73EA1 /* Cocoa.framework */; };
 		F2A8F0CD16E2985100E73EA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2A8F0CB16E2985100E73EA1 /* InfoPlist.strings */; };
 		F2A8F0CF16E2985100E73EA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A8F0CE16E2985100E73EA1 /* main.m */; };
@@ -19,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D906F8016E2A7F500E72884 /* ORSBluetoothLEScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSBluetoothLEScanner.h; sourceTree = "<group>"; };
+		9D906F8116E2A7F500E72884 /* ORSBluetoothLEScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSBluetoothLEScanner.m; sourceTree = "<group>"; };
+		9D906F8516E2A89200E72884 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
+		9D906F8A16E2AF6800E72884 /* ORSBluetoothBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSBluetoothBoard.h; sourceTree = "<group>"; };
+		9D906F8B16E2AF6800E72884 /* ORSBluetoothBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSBluetoothBoard.m; sourceTree = "<group>"; };
+		9D906F8C16E2AF6800E72884 /* ORSBluetoothAccelerometerBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSBluetoothAccelerometerBoard.h; sourceTree = "<group>"; };
+		9D906F8D16E2AF6800E72884 /* ORSBluetoothAccelerometerBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSBluetoothAccelerometerBoard.m; sourceTree = "<group>"; };
 		F2A8F0BF16E2985100E73EA1 /* SceneKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SceneKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A8F0C216E2985100E73EA1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F2A8F0C516E2985100E73EA1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -43,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D906F8616E2A89200E72884 /* IOBluetooth.framework in Frameworks */,
 				F2A8F0E516E2999F00E73EA1 /* QuartzCore.framework in Frameworks */,
 				F2A8F0E316E2999A00E73EA1 /* SceneKit.framework in Frameworks */,
 				F2A8F0C316E2985100E73EA1 /* Cocoa.framework in Frameworks */,
@@ -52,9 +64,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D906F8416E2A7FB00E72884 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				9D906F8016E2A7F500E72884 /* ORSBluetoothLEScanner.h */,
+				9D906F8116E2A7F500E72884 /* ORSBluetoothLEScanner.m */,
+				9D906F8A16E2AF6800E72884 /* ORSBluetoothBoard.h */,
+				9D906F8B16E2AF6800E72884 /* ORSBluetoothBoard.m */,
+				9D906F8C16E2AF6800E72884 /* ORSBluetoothAccelerometerBoard.h */,
+				9D906F8D16E2AF6800E72884 /* ORSBluetoothAccelerometerBoard.m */,
+			);
+			name = Bluetooth;
+			sourceTree = "<group>";
+		};
 		F2A8F0B616E2985100E73EA1 = {
 			isa = PBXGroup;
 			children = (
+				9D906F8516E2A89200E72884 /* IOBluetooth.framework */,
 				F2A8F0E416E2999F00E73EA1 /* QuartzCore.framework */,
 				F2A8F0E216E2999A00E73EA1 /* SceneKit.framework */,
 				F2A8F0C816E2985100E73EA1 /* SceneKitDemo */,
@@ -95,10 +121,11 @@
 			children = (
 				F2A8F0D416E2985100E73EA1 /* JAAppDelegate.h */,
 				F2A8F0D516E2985100E73EA1 /* JAAppDelegate.m */,
-				F2A8F0D716E2985100E73EA1 /* MainMenu.xib */,
-				F2A8F0C916E2985100E73EA1 /* Supporting Files */,
 				F2A8F0DF16E298CF00E73EA1 /* JASCNView.h */,
 				F2A8F0E016E298CF00E73EA1 /* JASCNView.m */,
+				F2A8F0D716E2985100E73EA1 /* MainMenu.xib */,
+				9D906F8416E2A7FB00E72884 /* Bluetooth */,
+				F2A8F0C916E2985100E73EA1 /* Supporting Files */,
 			);
 			path = SceneKitDemo;
 			sourceTree = "<group>";
@@ -183,6 +210,9 @@
 				F2A8F0CF16E2985100E73EA1 /* main.m in Sources */,
 				F2A8F0D616E2985100E73EA1 /* JAAppDelegate.m in Sources */,
 				F2A8F0E116E298CF00E73EA1 /* JASCNView.m in Sources */,
+				9D906F8316E2A7F500E72884 /* ORSBluetoothLEScanner.m in Sources */,
+				9D906F8E16E2AF6800E72884 /* ORSBluetoothBoard.m in Sources */,
+				9D906F8F16E2AF6800E72884 /* ORSBluetoothAccelerometerBoard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +348,7 @@
 				F2A8F0DE16E2985100E73EA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
