@@ -7,6 +7,7 @@
 //
 
 #import "JASCNView.h"
+#import "ORSBluetoothAccelerometerBoard.h"
 
 @implementation JASCNView
 

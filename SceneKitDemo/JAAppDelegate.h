@@ -7,9 +7,20 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ORSBluetoothAccelerometerBoard.h"
 
-@interface JAAppDelegate : NSObject <NSApplicationDelegate>
+@class JASCNView;
+@class ORSBluetoothLEScanner;
+
+@interface JAAppDelegate : NSObject <NSApplicationDelegate, ORSBluetoothBoardDelegate>
+
+- (IBAction)scan:(id)sender;
+
+@property (nonatomic, strong) ORSBluetoothLEScanner *scanner;
+@property (nonatomic, strong) ORSBluetoothAccelerometerBoard *accelerometer;
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet JASCNView *sceneView;
+@property (assign) IBOutlet NSTextField *scanningInfoLabel;
 
 @end

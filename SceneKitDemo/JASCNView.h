@@ -9,6 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import <SceneKit/SceneKit.h>
 
+@class ORSBluetoothAccelerometerOrientation;
+
 @interface JASCNView : SCNView
+
+@property (nonatomic, strong) ORSBluetoothAccelerometerOrientation *orientation;
 
 @end
