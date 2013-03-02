@@ -31,16 +31,18 @@
     CATransform3D torusTransform = CATransform3DMakeRotation(1.2, 0.0, 1.0, 0.0);
     torusNode.transform = torusTransform;
     
-    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
-    SCNNode *boxNode = [SCNNode nodeWithGeometry:box];
-    CATransform3D boxTransform = CATransform3DMakeRotation(1.2, 0.0, 1.0, 0.0);
-    boxNode.transform = boxTransform;
+//    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
+//    SCNNode *boxNode = [SCNNode nodeWithGeometry:box];
+//    CATransform3D boxTransform = CATransform3DMakeRotation(1.2, 0.0, 1.0, 0.0);
+//    boxNode.transform = boxTransform;
 
     SCNMaterial *material = [SCNMaterial material];
     material.diffuse.contents  = [NSColor blueColor];
     material.specular.contents = [NSColor whiteColor];
     material.shininess = 1.0;
     torus.materials = @[material];
+    
+    
     
     [scene.rootNode addChildNode:torusNode];
 //    [scene.rootNode addChildNode:boxNode];
