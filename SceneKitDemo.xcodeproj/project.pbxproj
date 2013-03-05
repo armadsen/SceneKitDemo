@@ -11,6 +11,8 @@
 		9D906F8616E2A89200E72884 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D906F8516E2A89200E72884 /* IOBluetooth.framework */; };
 		9D906F8E16E2AF6800E72884 /* ORSBluetoothBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D906F8B16E2AF6800E72884 /* ORSBluetoothBoard.m */; };
 		9D906F8F16E2AF6800E72884 /* ORSBluetoothAccelerometerBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D906F8D16E2AF6800E72884 /* ORSBluetoothAccelerometerBoard.m */; };
+		F23CD8E916E6A2E0007ECE2A /* normalWeave.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F23CD8E816E6A2E0007ECE2A /* normalWeave.jpg */; };
+		F23CD8EB16E6A3D2007ECE2A /* normalBrick.png in Resources */ = {isa = PBXBuildFile; fileRef = F23CD8EA16E6A3D2007ECE2A /* normalBrick.png */; };
 		F2A8F0C316E2985100E73EA1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2A8F0C216E2985100E73EA1 /* Cocoa.framework */; };
 		F2A8F0CD16E2985100E73EA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2A8F0CB16E2985100E73EA1 /* InfoPlist.strings */; };
 		F2A8F0CF16E2985100E73EA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A8F0CE16E2985100E73EA1 /* main.m */; };
@@ -35,6 +37,9 @@
 		9D906F8B16E2AF6800E72884 /* ORSBluetoothBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSBluetoothBoard.m; sourceTree = "<group>"; };
 		9D906F8C16E2AF6800E72884 /* ORSBluetoothAccelerometerBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSBluetoothAccelerometerBoard.h; sourceTree = "<group>"; };
 		9D906F8D16E2AF6800E72884 /* ORSBluetoothAccelerometerBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSBluetoothAccelerometerBoard.m; sourceTree = "<group>"; };
+		F23CD8E816E6A2E0007ECE2A /* normalWeave.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = normalWeave.jpg; sourceTree = "<group>"; };
+		F23CD8EA16E6A3D2007ECE2A /* normalBrick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normalBrick.png; sourceTree = "<group>"; };
+		F23CD8EC16E6A716007ECE2A /* torus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = torus.h; sourceTree = "<group>"; };
 		F2A8F0BF16E2985100E73EA1 /* SceneKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SceneKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A8F0C216E2985100E73EA1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F2A8F0C516E2985100E73EA1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -143,6 +148,9 @@
 		F2A8F0C916E2985100E73EA1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F23CD8EC16E6A716007ECE2A /* torus.h */,
+				F23CD8EA16E6A3D2007ECE2A /* normalBrick.png */,
+				F23CD8E816E6A2E0007ECE2A /* normalWeave.jpg */,
 				F2A8F0EE16E2B76600E73EA1 /* male_large_01.png */,
 				F2A8F0EF16E2B76600E73EA1 /* male_large.dae */,
 				F2A8F0EA16E2AF8B00E73EA1 /* Bee2.dae */,
@@ -217,6 +225,8 @@
 				F2A8F0EB16E2AF8B00E73EA1 /* Bee2.dae in Resources */,
 				F2A8F0F016E2B76600E73EA1 /* male_large_01.png in Resources */,
 				F2A8F0F116E2B76600E73EA1 /* male_large.dae in Resources */,
+				F23CD8E916E6A2E0007ECE2A /* normalWeave.jpg in Resources */,
+				F23CD8EB16E6A3D2007ECE2A /* normalBrick.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
