@@ -19,7 +19,7 @@
 @implementation JASCNView
 
 -(void)awakeFromNib {
-    self.backgroundColor = [NSColor blackColor];
+    self.backgroundColor = [NSColor grayColor];
     
     SCNScene *scene = [SCNScene scene];
     self.scene = scene;
@@ -48,13 +48,33 @@
     diffuseLightNode.position = SCNVector3Make(-30, 30, 50);
     [self.scene.rootNode addChildNode:diffuseLightNode];
     
+    
+//    /*! @constant SCNLightTypeAmbient Ambient light */
+//    SCENEKIT_EXTERN NSString * const SCNLightTypeAmbient;
+//    /*! @constant SCNLightTypeOmni Omnidirectional light */
+//    SCENEKIT_EXTERN NSString * const SCNLightTypeOmni;
+//    /*! @constant SCNLightTypeDirectional Directional light */
+//    SCENEKIT_EXTERN NSString * const SCNLightTypeDirectional;
+//    /*! @constant SCNLightTypeSpot Spotlight */
+//    SCENEKIT_EXTERN NSString * const SCNLightTypeSpot;
+    
     self.allowsCameraControl = YES;
     
     [self loadTorus];
-    //[self loadBeeFromSceneFile];
+    [self addTextToNode:self.torusNode];
+    
+//    [self loadBeeFromSceneFile];
     
 //    [self loadMaleScene];
 
+}
+
+-(void)addTextToNode:(SCNNode *)node {
+    SCNText *text = [SCNText textWithString:@"CocoaHeads!" extrusionDepth:4.f];
+    SCNNode *textNode = [SCNNode nodeWithGeometry:text];
+    textNode.position = SCNVector3Make(-1, 5, 0);
+    textNode.transform = CATransform3DScale(textNode.transform, .1f, .1f, .1f);
+    [node addChildNode:textNode];
 }
 
 -(void)loadBeeFromSceneFile {
@@ -63,7 +83,6 @@
     
     SCNMaterial *material = [SCNMaterial material];
     material.diffuse.contents  = [NSColor grayColor];
-    //material.diffuse.contents = [NSImage imageNamed:@"slccocoaheads.png"];
     material.specular.contents = [NSColor whiteColor];
     material.shininess = 1.0;
     
@@ -100,8 +119,10 @@
     //    boxNode.transform = boxTransform;
     
     SCNMaterial *material = [SCNMaterial material];
-    //    material.diffuse.contents  = [NSColor blueColor];
-    material.diffuse.contents = [NSImage imageNamed:@"slccocoaheads.png"];
+    material.diffuse.contents  = [NSColor blueColor];
+    //material.diffuse.contents = [NSImage imageNamed:@"slccocoaheadswhite.png"];
+    material.normal.contents = [NSImage imageNamed:@"normalBrick.png"];
+    
     material.specular.contents = [NSColor whiteColor];
     material.shininess = 1.0;
     torus.materials = @[material];
@@ -121,7 +142,7 @@
     animation.duration = 9.f;
     animation.repeatCount = HUGE_VALF;
     
-    //[torusNode addAnimation:animation forKey:@"transform"];
+    [torusNode addAnimation:animation forKey:@"transform"];
 	
 	self.torusNode = torusNode;
 }
