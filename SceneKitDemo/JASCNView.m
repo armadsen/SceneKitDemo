@@ -4,7 +4,8 @@
 //
 //  Created by Jake Gundersen on 3/2/13.
 //  Copyright (c) 2013 The Team. All rights reserved.
-//
+//  This code is based heavily on Jeff LaMarche's tutorial post on SceneKit found here http://iphonedevelopment.blogspot.com/2012/08/an-introduction-to-scenekit.html
+//  It's part of a presentation given at the SLC Cocoaheads group on March 5th, 2013
 
 #import "JASCNView.h"
 #import "ORSBluetoothAccelerometerBoard.h"
