@@ -41,12 +41,12 @@
     ambientLightNode.light = ambientLight;
     [self.scene.rootNode addChildNode:ambientLightNode];
     
-    SCNLight *omniLight = [SCNLight light];
-    SCNNode *omniLightNode = [SCNNode node];
-    omniLight.type = SCNLightTypeOmni;
-    omniLightNode.light = omniLight;
-    omniLightNode.position = SCNVector3Make(-30, 30, 50);
-    [self.scene.rootNode addChildNode:omniLightNode];
+//    SCNLight *omniLight = [SCNLight light];
+//    SCNNode *omniLightNode = [SCNNode node];
+//    omniLight.type = SCNLightTypeOmni;
+//    omniLightNode.light = omniLight;
+//    omniLightNode.position = SCNVector3Make(-30, 30, 50);
+//    [self.scene.rootNode addChildNode:omniLightNode];
     
     
 //    SCENEKIT_EXTERN NSString * const SCNLightTypeAmbient;
@@ -54,10 +54,10 @@
 //    SCENEKIT_EXTERN NSString * const SCNLightTypeDirectional;
 //    SCENEKIT_EXTERN NSString * const SCNLightTypeSpot;
     
-    self.allowsCameraControl = YES;
+//    self.allowsCameraControl = YES;
     
     [self loadTorus];
-    [self addTextToNode:self.torusNode];
+//    [self addTextToNode:self.torusNode];
     
 //    [self loadBeeFromSceneFile];
     
@@ -112,8 +112,8 @@
         
 //    SCNMaterial *material = [SCNMaterial material];
 //    material.diffuse.contents  = [NSColor blueColor];
-    //material.diffuse.contents = [NSImage imageNamed:@"slccocoaheadswhite.png"];
-    //material.normal.contents = [NSImage imageNamed:@"normalBrick.png"];
+//    material.diffuse.contents = [NSImage imageNamed:@"slccocoaheadswhite.png"];
+//    material.normal.contents = [NSImage imageNamed:@"normalBrick.png"];
     
 //    material.specular.contents = [NSColor whiteColor];
 //    material.shininess = 1.0;
