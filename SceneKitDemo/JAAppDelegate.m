@@ -17,6 +17,13 @@
 
 @implementation JAAppDelegate
 
+- (void)applicationDidFinishLaunching:(NSNotification *)notification
+{
+//	[self scan:nil];
+}
+
+#pragma mark - Actions
+
 - (IBAction)scan:(id)sender;
 {
 	[self.scanner scanForDevicesAdvertisingServices:@[ORSBluetoothBoardAccelerometerServiceUUIDString]];

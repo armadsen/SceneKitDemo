@@ -19,7 +19,8 @@
 
 @implementation JASCNView
 
--(void)awakeFromNib {
+-(void)awakeFromNib
+{
     self.backgroundColor = [NSColor whiteColor];
     
     SCNScene *scene = [SCNScene scene];
@@ -66,7 +67,8 @@
 
 }
 
--(void)addTextToNode:(SCNNode *)node {
+-(void)addTextToNode:(SCNNode *)node
+{
     SCNText *text = [SCNText textWithString:@"CocoaHeads!" extrusionDepth:4.f];
     SCNNode *textNode = [SCNNode nodeWithGeometry:text];
     textNode.position = SCNVector3Make(-1, 5, 0);
@@ -75,7 +77,8 @@
     [node addChildNode:textNode];
 }
 
--(void)loadBeeFromSceneFile {
+-(void)loadBeeFromSceneFile
+{
     SCNScene *newScene = [self loadSceneFromFile:@"Bee2.dae"];
     SCNNode *bee = [newScene.rootNode childNodeWithName:@"Bee" recursively:YES];
     
@@ -91,20 +94,23 @@
 	self.beeNode = bee;
 }
 
--(void)loadMaleScene {
+-(void)loadMaleScene
+{
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"male_large" withExtension:@"dae"];
 
     NSError * __autoreleasing error;
     SCNScene *scene = [SCNScene sceneWithURL:url options:nil error:&error];
-    if (scene)
+    if (scene) {
         self.scene = scene;
-    else
+	} else {
         NSLog(@"Yikes! You're going to do real error handling, right?");
+	}
     
     self.playing = YES;
 }
 
--(void)loadTorus {
+-(void)loadTorus
+{
     
     SCNTorus *torus = [SCNTorus torusWithRingRadius:10 pipeRadius:3];
     SCNNode *torusNode = [SCNNode nodeWithGeometry:torus];
@@ -139,7 +145,8 @@
 	self.torusNode = torusNode;
 }
 
--(SCNScene *)loadSceneFromFile:(NSString *)filename {
+-(SCNScene *)loadSceneFromFile:(NSString *)filename
+{
     NSString *name = [[filename lastPathComponent] stringByDeletingPathExtension];
     NSString *extension = [filename pathExtension];
     
@@ -147,10 +154,11 @@
 
     NSError * __autoreleasing error;
     SCNScene *scene = [SCNScene sceneWithURL:url options:nil error:&error];
-    if (scene)
+    if (scene) {
         self.scene = scene;
-    else
+	} else {
         NSLog(@"Yikes! You're going to do real error handling, right?");
+	}
     return scene;
 }
 
