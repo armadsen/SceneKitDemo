@@ -1,0 +1,57 @@
+What is SceneKit?
+
+Set up Project -
+	new mac project
+	add SCNView to Nib
+	Subclass SCNView
+	
+	Add frameworks - 
+		SceneKit
+		QuartzCore
+		
+Basic Scene
+	Background color
+	Geometry - Torus
+		Show torus code
+	Camera - 
+	Light - ambient
+	
+	B&R
+	
+	Light - Diffuse
+	
+	B&R
+	
+Moving things
+	Turn on Camera Control
+	
+	B&R
+	
+	Animating - CAAnimation
+	
+	B&R
+	
+Materials - 
+	
+	Color
+	Texture
+	Normals
+	
+	Talk about lighting model - phong
+	Talk about other options, transparency, etc	
+
+Nodal Structure
+	Add text node - 
+	Positioning - transforms
+	
+mouseDown - 
+	hit testing
+	animating materials
+	
+Loading a collada scene
+	Built in collada viewer
+	load whole scene
+	load part of a scene - manipulate
+	
+Andrew 
+	using accelerometer to rotate torus

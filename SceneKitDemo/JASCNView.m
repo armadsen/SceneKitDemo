@@ -19,7 +19,7 @@
 @implementation JASCNView
 
 -(void)awakeFromNib {
-    self.backgroundColor = [NSColor grayColor];
+    self.backgroundColor = [NSColor whiteColor];
     
     SCNScene *scene = [SCNScene scene];
     self.scene = scene;
@@ -41,21 +41,17 @@
     ambientLightNode.light = ambientLight;
     [self.scene.rootNode addChildNode:ambientLightNode];
     
-    SCNLight *diffuseLight = [SCNLight light];
-    SCNNode *diffuseLightNode = [SCNNode node];
-    diffuseLight.type = SCNLightTypeOmni;
-    diffuseLightNode.light = diffuseLight;
-    diffuseLightNode.position = SCNVector3Make(-30, 30, 50);
-    [self.scene.rootNode addChildNode:diffuseLightNode];
+    SCNLight *omniLight = [SCNLight light];
+    SCNNode *omniLightNode = [SCNNode node];
+    omniLight.type = SCNLightTypeOmni;
+    omniLightNode.light = omniLight;
+    omniLightNode.position = SCNVector3Make(-30, 30, 50);
+    [self.scene.rootNode addChildNode:omniLightNode];
     
     
-//    /*! @constant SCNLightTypeAmbient Ambient light */
 //    SCENEKIT_EXTERN NSString * const SCNLightTypeAmbient;
-//    /*! @constant SCNLightTypeOmni Omnidirectional light */
 //    SCENEKIT_EXTERN NSString * const SCNLightTypeOmni;
-//    /*! @constant SCNLightTypeDirectional Directional light */
 //    SCENEKIT_EXTERN NSString * const SCNLightTypeDirectional;
-//    /*! @constant SCNLightTypeSpot Spotlight */
 //    SCENEKIT_EXTERN NSString * const SCNLightTypeSpot;
     
     self.allowsCameraControl = YES;
@@ -74,6 +70,7 @@
     SCNNode *textNode = [SCNNode nodeWithGeometry:text];
     textNode.position = SCNVector3Make(-1, 5, 0);
     textNode.transform = CATransform3DScale(textNode.transform, .1f, .1f, .1f);
+    //textNode.transform = CATransform3DTranslate(textNode.transform, -10, 50, 0);
     [node addChildNode:textNode];
 }
 
@@ -112,37 +109,31 @@
     SCNNode *torusNode = [SCNNode nodeWithGeometry:torus];
     CATransform3D torusTransform = CATransform3DMakeRotation(1.2, 0.0, 1.0, 0.0);
     torusNode.transform = torusTransform;
-    
-    //    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
-    //    SCNNode *boxNode = [SCNNode nodeWithGeometry:box];
-    //    CATransform3D boxTransform = CATransform3DMakeRotation(1.2, 0.0, 1.0, 0.0);
-    //    boxNode.transform = boxTransform;
-    
-    SCNMaterial *material = [SCNMaterial material];
-    material.diffuse.contents  = [NSColor blueColor];
+        
+//    SCNMaterial *material = [SCNMaterial material];
+//    material.diffuse.contents  = [NSColor blueColor];
     //material.diffuse.contents = [NSImage imageNamed:@"slccocoaheadswhite.png"];
-    material.normal.contents = [NSImage imageNamed:@"normalBrick.png"];
+    //material.normal.contents = [NSImage imageNamed:@"normalBrick.png"];
     
-    material.specular.contents = [NSColor whiteColor];
-    material.shininess = 1.0;
-    torus.materials = @[material];
+//    material.specular.contents = [NSColor whiteColor];
+//    material.shininess = 1.0;
+//    torus.materials = @[material];
     
     
     [self.scene.rootNode addChildNode:torusNode];
-    //    [scene.rootNode addChildNode:boxNode];
     
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
-    animation.values = [NSArray arrayWithObjects:
-                        [NSValue valueWithCATransform3D:CATransform3DRotate(torusNode.transform, 0 * M_PI / 2, 1.f, 0.5f, 0.f)],
-                        [NSValue valueWithCATransform3D:CATransform3DRotate(torusNode.transform, 1 * M_PI / 2, 1.f, 0.5f, 0.f)],
-                        [NSValue valueWithCATransform3D:CATransform3DRotate(torusNode.transform, 2 * M_PI / 2, 1.f, 0.5f, 0.f)],
-                        [NSValue valueWithCATransform3D:CATransform3DRotate(torusNode.transform, 3 * M_PI / 2, 1.f, 0.5f, 0.f)],
-                        [NSValue valueWithCATransform3D:CATransform3DRotate(torusNode.transform, 4 * M_PI / 2, 1.f, 0.5f, 0.f)],
-                        nil];
-    animation.duration = 9.f;
-    animation.repeatCount = HUGE_VALF;
-    
-    [torusNode addAnimation:animation forKey:@"transform"];
+//    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
+//    animation.values = [NSArray arrayWithObjects:
+//                        [NSValue valueWithCATransform3D:CATransform3DRotate(torusNode.transform, 0 * M_PI / 2, 1.f, 0.5f, 0.f)],
+//                        [NSValue valueWithCATransform3D:CATransform3DRotate(torusNode.transform, 1 * M_PI / 2, 1.f, 0.5f, 0.f)],
+//                        [NSValue valueWithCATransform3D:CATransform3DRotate(torusNode.transform, 2 * M_PI / 2, 1.f, 0.5f, 0.f)],
+//                        [NSValue valueWithCATransform3D:CATransform3DRotate(torusNode.transform, 3 * M_PI / 2, 1.f, 0.5f, 0.f)],
+//                        [NSValue valueWithCATransform3D:CATransform3DRotate(torusNode.transform, 4 * M_PI / 2, 1.f, 0.5f, 0.f)],
+//                        nil];
+//    animation.duration = 9.f;
+//    animation.repeatCount = HUGE_VALF;
+//    
+//    [torusNode addAnimation:animation forKey:@"transform"];
 	
 	self.torusNode = torusNode;
 }
@@ -162,29 +153,29 @@
     return scene;
 }
 
-- (void)mouseDown:(NSEvent *)event
-{
-    NSPoint mouseLocation = [self convertPoint:[event locationInWindow] fromView:nil];
-    NSArray *hits = [self hitTest:mouseLocation options:nil];
-    
-    if ([hits count] > 0)
-    {
-        SCNHitTestResult *hit = hits[0];
-        SCNMaterial *material = [hit.node.geometry.materials objectAtIndex:0];
-        
-        CABasicAnimation *highlightAnimation = [CABasicAnimation animationWithKeyPath:@"contents"];
-        highlightAnimation.toValue = [NSColor redColor];
-        highlightAnimation.fromValue = [NSColor blackColor];
-        highlightAnimation.repeatCount = 1;
-        highlightAnimation.autoreverses = YES;
-        highlightAnimation.duration = 0.35;
-        highlightAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-        
-        [material.emission addAnimation:highlightAnimation forKey:@"highlight"];
-    }
-    
-    [super mouseDown:event];
-}
+//- (void)mouseDown:(NSEvent *)event
+//{
+//    NSPoint mouseLocation = [self convertPoint:[event locationInWindow] fromView:nil];
+//    NSArray *hits = [self hitTest:mouseLocation options:nil];
+//    
+//    if ([hits count] > 0)
+//    {
+//        SCNHitTestResult *hit = hits[0];
+//        SCNMaterial *material = [hit.node.geometry.materials objectAtIndex:0];
+//        
+//        CABasicAnimation *highlightAnimation = [CABasicAnimation animationWithKeyPath:@"contents"];
+//        highlightAnimation.toValue = [NSColor redColor];
+//        highlightAnimation.fromValue = [NSColor blackColor];
+//        highlightAnimation.repeatCount = 1;
+//        highlightAnimation.autoreverses = YES;
+//        highlightAnimation.duration = 0.35;
+//        highlightAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//        
+//        [material.emission addAnimation:highlightAnimation forKey:@"highlight"];
+//    }
+//    
+//    [super mouseDown:event];
+//}
 
 #pragma mark - Properties
 
